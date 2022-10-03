@@ -12,6 +12,47 @@ import LandingScreen from "./screens/LandingScreen";
 function App() {
   return (
     <BrowserRouter>
+      <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a href="http://localhost:3000/">
+                <button class="btn btn-primary" type="button">
+                  Home
+                </button>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="http://localhost:3000/login">
+                <button class="btn btn-primary" type="button">
+                  Login
+                </button>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="http://localhost:3000/admin">
+                <button class="btn btn-primary" type="button">
+                  Admin
+                </button>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="http://localhost:3000/logged">
+                <button class="btn btn-primary" type="button">
+                  Logged
+                </button>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="http://localhost:3000/account">
+                <button class="btn btn-primary" type="button">
+                  Account
+                </button>
+              </a>
+            </li>
+          </ul>
+        </form>
+      </nav>
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route index element={<LandingScreen />} />
