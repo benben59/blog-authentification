@@ -1,68 +1,38 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle";
-import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AccountScreen from "./screens/AccountScreen";
-import AdminScreen from "./screens/AdminScreen";
-import HomeScreen from "./screens/HomeScreen";
-import LoggedScreen from "./screens/LoggedScreen";
-import LoginScreen from "./screens/LoginScreen";
-import LandingScreen from "./screens/LandingScreen";
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle';
+import { BrowserRouter, Route, Routes, Link} from 'react-router-dom';
+import HomeScreen from './screens/HomeScreen';
+import LoginScreen from './screens/LoginScreen';
+import LoggedScreen from './screens/LoggedScreen';
+import AccountScreen from './screens/AccountScreen';
+import AdminScreen from './screens/AdminScreen';
 
 function App() {
+  
+
+
   return (
-    <BrowserRouter>
-      <nav class="navbar navbar-light bg-light">
-        <form class="form-inline">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a href="http://localhost:3000/">
-                <button class="btn btn-primary" type="button">
-                  Home
-                </button>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="http://localhost:3000/login">
-                <button class="btn btn-primary" type="button">
-                  Login
-                </button>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="http://localhost:3000/admin">
-                <button class="btn btn-primary" type="button">
-                  Admin
-                </button>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="http://localhost:3000/logged">
-                <button class="btn btn-primary" type="button">
-                  Logged
-                </button>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="http://localhost:3000/account">
-                <button class="btn btn-primary" type="button">
-                  Account
-                </button>
-              </a>
-            </li>
-          </ul>
-        </form>
-      </nav>
-      <Routes>
-        <Route path="/" element={<HomeScreen />} />
-        <Route index element={<LandingScreen />} />
-        <Route path="/login" element={<LoginScreen />} />
-        <Route path="/admin" element={<AdminScreen />} />
-        <Route path="/logged" element={<LoggedScreen />} />
-        <Route path="/account" element={<AccountScreen />} />
-        <Route path="*" element={<h1>404 not found</h1>} />
-      </Routes>
-    </BrowserRouter>
+    <div className="App container container-fluid">
+
+
+        <BrowserRouter>
+        <navbar className='d-flex w-100 justify-content-center my-3'>
+          <Link to='/' className='btn btn-primary mx-3'>Home</Link>
+          <Link to='/login' className='btn btn-primary mx-3'>Login</Link>
+          <Link to='/admin' className='btn btn-primary mx-3'>Admin</Link>
+          <Link to='/logged' className='btn btn-primary mx-3'>Logged</Link>
+          <Link  to='/account' className='btn btn-primary mx-3'>Account</Link>
+      </navbar>
+          <Routes>
+            <Route path='/' element={<HomeScreen/>}></Route>
+            <Route path='/login' element={<LoginScreen/>}></Route>
+            <Route path='/admin' element={<AdminScreen/>}></Route>
+            <Route path='/logged' element={<LoggedScreen/>}></Route>
+            <Route path='/account' element={<AccountScreen/>}></Route>
+          </Routes>
+        </BrowserRouter>
+    </div>
   );
 }
 
